@@ -9,10 +9,21 @@ import Foundation
 
 struct ShowLite: Decodable {
     let name: String
-    let image: Images
+    let image: Images?
 }
 
 struct Images: Decodable {
-    let medium: String
-    let original: String
+    let mediumURL: URL?
+    let originalURL: URL?
+
+    enum CodingKeys: String, CodingKey {
+        case mediumURL = "medium"
+        case originalURL = "original"
+      }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.mediumURL = URL(string: try container.decode(String.self, forKey: .mediumURL))
+        self.originalURL = URL(string: try container.decode(String.self, forKey: .originalURL))
+    }
 }

@@ -32,6 +32,7 @@
 		2B0C78E82841AC8B00FE9433 /* TVMazeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78E72841AC8B00FE9433 /* TVMazeAPI.swift */; };
 		2B0C78EC2841AF5E00FE9433 /* TVGuideService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78EB2841AF5E00FE9433 /* TVGuideService.swift */; };
 		2B0C78EE2841D27300FE9433 /* LoadMoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78ED2841D27300FE9433 /* LoadMoreTableViewCell.swift */; };
+		2B0C78F12841DECD00FE9433 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78F02841DECD00FE9433 /* SearchResult.swift */; };
 		481908B09E68A5B0C1FA56D6 /* Pods_TV_Guide_TV_GuideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */; };
 		ECF5BB01225737340D7A12BA /* Pods_TV_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB01B696987F7E60D08FFE /* Pods_TV_Guide.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		2B0C78E72841AC8B00FE9433 /* TVMazeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMazeAPI.swift; sourceTree = "<group>"; };
 		2B0C78EB2841AF5E00FE9433 /* TVGuideService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGuideService.swift; sourceTree = "<group>"; };
 		2B0C78ED2841D27300FE9433 /* LoadMoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreTableViewCell.swift; sourceTree = "<group>"; };
+		2B0C78F02841DECD00FE9433 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_Guide_TV_GuideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C622444FE84DB5C0969082 /* Pods_TV_GuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_GuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868CA0CA73DE126C430815AF /* Pods-TV GuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV GuideTests.release.xcconfig"; path = "Target Support Files/Pods-TV GuideTests/Pods-TV GuideTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				2B0C78CF284196E700FE9433 /* ShowLite.swift */,
+				2B0C78F02841DECD00FE9433 /* SearchResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B0C78C7284194AA00FE9433 /* UITableView+Cell.swift in Sources */,
+				2B0C78F12841DECD00FE9433 /* SearchResult.swift in Sources */,
 				2B0C78E82841AC8B00FE9433 /* TVMazeAPI.swift in Sources */,
 				2B0C788E28417C9B00FE9433 /* ShowsListViewController.swift in Sources */,
 				2B0C788A28417C9B00FE9433 /* AppDelegate.swift in Sources */,

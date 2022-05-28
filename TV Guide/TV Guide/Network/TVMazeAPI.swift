@@ -13,3 +13,11 @@ struct ShowListAPI: APIHandler {
         return try decoder.decode([ShowLite].self, from: data)
     }
 }
+
+struct SearchListAPI: APIHandler {
+    func parseResponse(data: Data) throws -> [ShowLite] {
+        let decoder = JSONDecoder()
+        let result = try decoder.decode([SearchResult].self, from: data)
+        return result.map { $0.show }
+    }
+}
