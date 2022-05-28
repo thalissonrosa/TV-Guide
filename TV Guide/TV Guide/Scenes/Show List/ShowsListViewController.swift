@@ -20,7 +20,6 @@ final class ShowsListViewController: UIViewController {
         ])
         tableView.delegate = self
         tableView.rowHeight = Dimension.cellHeight
-        tableView.allowsSelection = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -55,8 +54,10 @@ final class ShowsListViewController: UIViewController {
 // MARK: Private functions
 private extension ShowsListViewController {
     func setupUI() {
-        view.addSubview(searchBar)
-        view.addSubview(tableView)
+        view.apply {
+            $0.addSubview(searchBar)
+            $0.addSubview(tableView)
+        }
         setupConstraints()
     }
 
@@ -89,6 +90,18 @@ private extension ShowsListViewController {
             searchBar?.resignFirstResponder()
         }.disposed(by: disposeBag)
 
+        tableView.rx.modelSelected(ShowListItem.self).subscribe(onNext: { [weak self] item in
+            switch item {
+            case .item(let show):
+                let viewModel = ShowDetailViewModelImpl(show: show)
+                self?.navigationController?.pushViewController(
+                    ShowDetailViewController(viewModel: viewModel),
+                    animated: true
+                )
+            case .loadMore:
+                return
+            }
+        }).disposed(by: disposeBag)
     }
 
     func bindSearchBar() {

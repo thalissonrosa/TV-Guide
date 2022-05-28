@@ -56,9 +56,13 @@ final class ShowListTableViewCell: UITableViewCell {
 // MARK: Private methods
 private extension ShowListTableViewCell {
     func setupUI() {
-        contentView.addSubview(containerStackView)
-        containerStackView.addArrangedSubview(posterImageView)
-        containerStackView.addArrangedSubview(showNameLabel)
+        selectionStyle = .none
+        contentView.apply {
+            $0.addSubview(containerStackView.apply {
+                $0.addArrangedSubview(posterImageView)
+                $0.addArrangedSubview(showNameLabel)
+            })
+        }
         setupConstraints()
     }
 

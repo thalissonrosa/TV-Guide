@@ -7,3 +7,7 @@
 */
 
 "show_list_title" = "TV Shows";
+"show_detail_time" = "Time: %@";
+"show_detail_days" = "Days: %@";
+"common_separator" = ", ";
+"common_not_aplicable" = "N/A";
