@@ -10,6 +10,7 @@ target 'TV Guide' do
   pod 'Kingfisher', '7.0'
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
+  pod 'RxDataSources', '5.0'
 
   target 'TV GuideTests' do
     inherit! :search_paths

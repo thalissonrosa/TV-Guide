@@ -6,6 +6,7 @@
 //
 
 import RxCocoa
+import RxDataSources
 import RxSwift
 import UIKit
 
@@ -24,6 +25,20 @@ final class ShowDetailViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    private let dataSource = RxTableViewSectionedReloadDataSource<DetailSection>(
+      configureCell: { dataSource, tableView, indexPath, item in
+          switch item {
+          case .header(let show):
+              let cell = tableView.dequeueReusableCell(with: ShowDetailHeaderTableCell.self)
+              cell.bind(show: show)
+              return cell
+          case .summary(let show):
+              let cell = tableView.dequeueReusableCell(with: ShowDetailSummaryTableCell.self)
+              cell.bind(show: show)
+              return cell
+          }
+      }
+    )
     private let viewModel: ShowDetailViewModel
     private let disposeBag = DisposeBag()
 
@@ -57,17 +72,11 @@ private extension ShowDetailViewController {
         tableView.addConstraintsToFillSuperview()
     }
     func bindTableView() {
-        viewModel.items.bind(to: tableView.rx.items) { [viewModel] (tableView, _, item) in
-            switch item {
-            case .header:
-                let cell = tableView.dequeueReusableCell(with: ShowDetailHeaderTableCell.self)
-                cell.bind(show: viewModel.show)
-                return cell
-            case .summary:
-                let cell = tableView.dequeueReusableCell(with: ShowDetailSummaryTableCell.self)
-                cell.bind(show: viewModel.show)
-                return cell
-            }
-        }.disposed(by: disposeBag)
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource.sectionModels[index].header
+        }
+        Observable.just(viewModel.items)
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
     }
 }
