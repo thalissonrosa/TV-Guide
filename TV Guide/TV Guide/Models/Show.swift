@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ShowLite: Decodable {
+struct Show: Decodable {
     let name: String
     let image: Images?
     let summary: String

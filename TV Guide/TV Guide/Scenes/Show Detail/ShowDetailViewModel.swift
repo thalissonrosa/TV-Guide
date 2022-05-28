@@ -14,14 +14,14 @@ enum ShowDetailItem {
 
 protocol ShowDetailViewModel: AnyObject {
     var items: BehaviorRelay<[ShowDetailItem]> { get }
-    var show: ShowLite { get }
+    var show: Show { get }
 }
 
 final class ShowDetailViewModelImpl: ShowDetailViewModel {
     let items = BehaviorRelay<[ShowDetailItem]>(value: [.header])
-    let show: ShowLite
+    let show: Show
 
-    init(show: ShowLite) {
+    init(show: Show) {
         self.show = show
     }
 }

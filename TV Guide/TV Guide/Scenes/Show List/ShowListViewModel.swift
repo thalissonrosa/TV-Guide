@@ -10,7 +10,7 @@ import RxSwift
 import RxRelay
 
 enum ShowListItem {
-    case item(show: ShowLite)
+    case item(show: Show)
     case loadMore
 }
 
@@ -86,7 +86,7 @@ private extension ShowListViewModelImpl {
         page += 1
     }
 
-    func handleResponse(shows: [ShowLite]) -> [ShowListItem] {
+    func handleResponse(shows: [Show]) -> [ShowListItem] {
         var items = shows.map { ShowListItem.item(show: $0) }
         if haveMoreItems {
             items.append(.loadMore)

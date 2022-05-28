@@ -63,7 +63,7 @@ final class ShowDetailHeaderTableCell: UITableViewCell {
     }
 
     // MARK: Public methods
-    func bind(show: ShowLite) {
+    func bind(show: Show) {
         showNameLabel.text = show.name
         let separator = R.string.localizable.common_separator()
         let notApplicable = R.string.localizable.common_not_aplicable()

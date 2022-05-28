@@ -21,7 +21,7 @@ final class TVGuideService {
         self.searchLoader = searchLoard
     }
 
-    func getShows(page: Int) -> Single<[ShowLite]> {
+    func getShows(page: Int) -> Single<[Show]> {
         Single.create { [weak self] single in
             self?.showListLoader.request(router: TVMazeRouter.getShows(page: page)) { result in
                 switch result {
@@ -35,7 +35,7 @@ final class TVGuideService {
         }
     }
 
-    func search(query: String) -> Single<[ShowLite]> {
+    func search(query: String) -> Single<[Show]> {
         Single.create { [weak self] single in
             self?.searchLoader.request(router: TVMazeRouter.search(query: query)) { result in
                 switch result {

@@ -46,7 +46,7 @@ final class ShowListTableViewCell: UITableViewCell {
     }
 
     // MARK: Public methods
-    func bind(show: ShowLite) {
+    func bind(show: Show) {
         showNameLabel.text = show.name
         guard let url = show.image?.mediumURL else { return }
         posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constant.imageFadeIn))])
