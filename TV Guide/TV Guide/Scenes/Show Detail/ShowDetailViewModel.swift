@@ -10,6 +10,7 @@ import RxRelay
 
 enum ShowDetailItem {
     case header
+    case summary
 }
 
 protocol ShowDetailViewModel: AnyObject {
@@ -18,7 +19,9 @@ protocol ShowDetailViewModel: AnyObject {
 }
 
 final class ShowDetailViewModelImpl: ShowDetailViewModel {
-    let items = BehaviorRelay<[ShowDetailItem]>(value: [.header])
+    let items = BehaviorRelay<[ShowDetailItem]>(
+        value: [.header, .summary]
+    )
     let show: Show
 
     init(show: Show) {

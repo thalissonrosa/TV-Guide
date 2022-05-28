@@ -15,11 +15,11 @@ final class ShowDetailViewController: UIViewController {
         let tableView = UITableView()
         tableView.tableFooterView = UIView()
         tableView.register(cellTypes: [
-            ShowDetailHeaderTableCell.self
+            ShowDetailHeaderTableCell.self,
+            ShowDetailSummaryTableCell.self
         ])
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200.0
         tableView.allowsSelection = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -61,6 +61,10 @@ private extension ShowDetailViewController {
             switch item {
             case .header:
                 let cell = tableView.dequeueReusableCell(with: ShowDetailHeaderTableCell.self)
+                cell.bind(show: viewModel.show)
+                return cell
+            case .summary:
+                let cell = tableView.dequeueReusableCell(with: ShowDetailSummaryTableCell.self)
                 cell.bind(show: viewModel.show)
                 return cell
             }

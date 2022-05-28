@@ -95,7 +95,10 @@ private extension ShowDetailHeaderTableCell {
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            posterImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            posterImageView.leadingAnchor.constraint(
+                equalTo: contentView.leadingAnchor,
+                constant: Dimension.horizontalSpacing
+            ),
             posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             posterImageView.widthAnchor.constraint(
