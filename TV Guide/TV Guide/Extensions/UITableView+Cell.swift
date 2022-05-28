@@ -1,0 +1,28 @@
+//
+//  UITableView+Cell.swift
+//  TV Guide
+//
+//  Created by Thalisson da Rosa on 27/05/22.
+//
+
+import UIKit
+
+extension UITableView {
+    func register<T: UITableViewCell>(cellType: T.Type) {
+        let className = cellType.className
+        register(cellType, forCellReuseIdentifier: className)
+    }
+
+    func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
+        guard let cell = dequeueReusableCell(withIdentifier: type.className, for: indexPath) as? T else {
+            fatalError("Failed to acquire a cell with identifier: \(type.className) and index: \(indexPath)")
+        }
+        return cell
+    }
+}
+
+private extension NSObject {
+    class var className: String {
+        String(describing: self)
+    }
+}
