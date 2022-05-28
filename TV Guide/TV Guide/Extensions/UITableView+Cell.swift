@@ -13,9 +13,13 @@ extension UITableView {
         register(cellType, forCellReuseIdentifier: className)
     }
 
-    func dequeueReusableCell<T: UITableViewCell>(with type: T.Type, for indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withIdentifier: type.className, for: indexPath) as? T else {
-            fatalError("Failed to acquire a cell with identifier: \(type.className) and index: \(indexPath)")
+    func register(cellTypes: [UITableViewCell.Type]) {
+        cellTypes.forEach { register(cellType: $0) }
+    }
+
+    func dequeueReusableCell<T: UITableViewCell>(with type: T.Type) -> T {
+        guard let cell = dequeueReusableCell(withIdentifier: type.className) as? T else {
+            fatalError("Failed to acquire a cell with identifier: \(type.className)")
         }
         return cell
     }

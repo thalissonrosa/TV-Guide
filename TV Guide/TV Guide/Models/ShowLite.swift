@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct ShowLite {
+struct ShowLite: Decodable {
     let name: String
-    let posterImageURL: String
+    let image: Images
+}
+
+struct Images: Decodable {
+    let medium: String
+    let original: String
 }
