@@ -16,6 +16,7 @@ enum ShowDetailItem {
     case summary(show: Show)
     case episode(_ episode: Episode)
     case episodeHeader
+    case loadingEpisodes
 }
 
 struct DetailSection {
@@ -59,7 +60,8 @@ final class ShowDetailViewModelImpl: ShowDetailViewModel {
                     items: [
                         .header(show: show),
                         .summary(show: show),
-                        .episodeHeader
+                        .episodeHeader,
+                        .loadingEpisodes
                     ]
                 )
             ]
@@ -67,15 +69,25 @@ final class ShowDetailViewModelImpl: ShowDetailViewModel {
     }
 
     func loadSeasons() {
-        service.getSeasons(show: show).subscribe(onSuccess: { seasons in
-            let sections = seasons.seasons.map { season -> DetailSection in
+        service.getSeasons(show: show).subscribe(onSuccess: { [show] seasons in
+            let episodeSections = seasons.seasons.map { season -> DetailSection in
                 var header: String? = nil
                 if let seasonNumber = season.episodes.first?.season {
                     header = R.string.localizable.show_detail_season_header(seasonNumber)
                 }
                 return DetailSection(header: header, items: season.episodes.map { ShowDetailItem.episode($0) })
             }
-            self._items.accept(self._items.value + sections)
+            let sections: [DetailSection] = [
+                DetailSection(
+                    header: nil,
+                    items: [
+                        .header(show: show),
+                        .summary(show: show),
+                        .episodeHeader
+                    ]
+                )
+            ]
+            self._items.accept(sections + episodeSections)
         }).disposed(by: disposeBag)
     }
 }
