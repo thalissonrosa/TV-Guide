@@ -25,25 +25,25 @@ final class ShowDetailHeaderTableCell: UITableViewCell {
     }()
     private let showNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 24.0, weight: .bold)
+        label.font = .boldTitle()
         label.numberOfLines = 2
         return label
     }()
     private let genresLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14.0, weight: .regular)
+        label.font = .smallRegular()
         label.numberOfLines = 0
         return label
     }()
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16.0, weight: .regular)
+        label.font = .mediumRegular()
         label.numberOfLines = 1
         return label
     }()
     private let daysLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16.0, weight: .regular)
+        label.font = .mediumRegular()
         label.numberOfLines = 0
         return label
     }()

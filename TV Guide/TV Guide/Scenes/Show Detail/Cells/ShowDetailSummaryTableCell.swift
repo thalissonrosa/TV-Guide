@@ -18,14 +18,14 @@ final class ShowDetailSummaryTableCell: UITableViewCell {
     }()
     private let summaryTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 24.0, weight: .bold)
+        label.font = .boldTitle()
         label.numberOfLines = 1
         label.text = R.string.localizable.show_detail_summary()
         return label
     }()
     private let summaryDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16.0, weight: .regular)
+        label.font = .mediumRegular()
         label.textAlignment = .justified
         label.numberOfLines = 0
         return label

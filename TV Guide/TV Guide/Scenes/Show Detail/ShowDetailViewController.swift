@@ -18,7 +18,8 @@ final class ShowDetailViewController: UIViewController {
         tableView.register(cellTypes: [
             ShowDetailHeaderTableCell.self,
             ShowDetailSummaryTableCell.self,
-            ShowDetailEpisodeTableCell.self
+            ShowDetailEpisodeTableCell.self,
+            ShowDetailEpisodesHeaderCell.self,
         ])
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
@@ -41,6 +42,8 @@ final class ShowDetailViewController: UIViewController {
                 let cell = tableView.dequeueReusableCell(with: ShowDetailEpisodeTableCell.self)
                 cell.bind(episode: episode)
                 return cell
+            case .episodeHeader:
+                return tableView.dequeueReusableCell(with: ShowDetailEpisodesHeaderCell.self)
           }
       }
     )

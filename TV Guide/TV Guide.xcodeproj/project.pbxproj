@@ -41,6 +41,8 @@
 		2B0C790628422BC000FE9433 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C790528422BC000FE9433 /* Season.swift */; };
 		2B0C790828422C0C00FE9433 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C790728422C0C00FE9433 /* Episode.swift */; };
 		2B0C790A284335CB00FE9433 /* ShowDetailEpisodeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C7909284335CB00FE9433 /* ShowDetailEpisodeTableCell.swift */; };
+		2B0C790C2843429200FE9433 /* ShowDetailEpisodesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C790B2843429100FE9433 /* ShowDetailEpisodesHeaderCell.swift */; };
+		2B0C790E284344E200FE9433 /* UIFont+AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C790D284344E200FE9433 /* UIFont+AppFonts.swift */; };
 		481908B09E68A5B0C1FA56D6 /* Pods_TV_Guide_TV_GuideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */; };
 		ECF5BB01225737340D7A12BA /* Pods_TV_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB01B696987F7E60D08FFE /* Pods_TV_Guide.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		2B0C790528422BC000FE9433 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		2B0C790728422C0C00FE9433 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		2B0C7909284335CB00FE9433 /* ShowDetailEpisodeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailEpisodeTableCell.swift; sourceTree = "<group>"; };
+		2B0C790B2843429100FE9433 /* ShowDetailEpisodesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailEpisodesHeaderCell.swift; sourceTree = "<group>"; };
+		2B0C790D284344E200FE9433 /* UIFont+AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+AppFonts.swift"; sourceTree = "<group>"; };
 		2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_Guide_TV_GuideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C622444FE84DB5C0969082 /* Pods_TV_GuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_GuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868CA0CA73DE126C430815AF /* Pods-TV GuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV GuideTests.release.xcconfig"; path = "Target Support Files/Pods-TV GuideTests/Pods-TV GuideTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 			children = (
 				2B0C789228417C9E00FE9433 /* Assets.xcassets */,
 				2B0C78C82841964300FE9433 /* Localizable.strings */,
+				2B0C790D284344E200FE9433 /* UIFont+AppFonts.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				2B0C78F82841FF7000FE9433 /* ShowDetailHeaderTableCell.swift */,
 				2B0C79032842172E00FE9433 /* ShowDetailSummaryTableCell.swift */,
 				2B0C7909284335CB00FE9433 /* ShowDetailEpisodeTableCell.swift */,
+				2B0C790B2843429100FE9433 /* ShowDetailEpisodesHeaderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -622,6 +628,7 @@
 				2B0C78C7284194AA00FE9433 /* UITableView+Cell.swift in Sources */,
 				2B0C78F12841DECD00FE9433 /* SearchResult.swift in Sources */,
 				2B0C78E82841AC8B00FE9433 /* TVMazeAPI.swift in Sources */,
+				2B0C790E284344E200FE9433 /* UIFont+AppFonts.swift in Sources */,
 				2B0C788E28417C9B00FE9433 /* ShowsListViewController.swift in Sources */,
 				2B0C788A28417C9B00FE9433 /* AppDelegate.swift in Sources */,
 				2B0C78D72841A9AA00FE9433 /* ResponseHandler.swift in Sources */,
@@ -640,6 +647,7 @@
 				2B0C78EE2841D27300FE9433 /* LoadMoreTableViewCell.swift in Sources */,
 				2B0C790628422BC000FE9433 /* Season.swift in Sources */,
 				2B0C790A284335CB00FE9433 /* ShowDetailEpisodeTableCell.swift in Sources */,
+				2B0C790C2843429200FE9433 /* ShowDetailEpisodesHeaderCell.swift in Sources */,
 				2B0C78E12841AA3600FE9433 /* APIError.swift in Sources */,
 				2B0C78C5284185D200FE9433 /* ShowListTableViewCell.swift in Sources */,
 				2B0C78DE2841AA0600FE9433 /* APILoader.swift in Sources */,

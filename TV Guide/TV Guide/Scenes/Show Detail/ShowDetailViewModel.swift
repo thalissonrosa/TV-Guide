@@ -15,6 +15,7 @@ enum ShowDetailItem {
     case header(show: Show)
     case summary(show: Show)
     case episode(_ episode: Episode)
+    case episodeHeader
 }
 
 struct DetailSection {
@@ -57,7 +58,8 @@ final class ShowDetailViewModelImpl: ShowDetailViewModel {
                     header: nil,
                     items: [
                         .header(show: show),
-                        .summary(show: show)
+                        .summary(show: show),
+                        .episodeHeader
                     ]
                 )
             ]

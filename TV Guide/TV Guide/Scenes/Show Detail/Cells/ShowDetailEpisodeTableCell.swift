@@ -19,7 +19,7 @@ final class ShowDetailEpisodeTableCell: UITableViewCell {
     }()
     private let episodeLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14.0, weight: .regular)
+        label.font = .smallRegular()
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

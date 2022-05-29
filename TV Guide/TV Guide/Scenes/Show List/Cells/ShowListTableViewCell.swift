@@ -26,6 +26,7 @@ final class ShowListTableViewCell: UITableViewCell {
     }()
     private let showNameLabel: UILabel = {
         let label = UILabel()
+        label.font = .mediumRegular()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
