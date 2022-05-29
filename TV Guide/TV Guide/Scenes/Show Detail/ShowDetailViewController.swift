@@ -17,7 +17,8 @@ final class ShowDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.register(cellTypes: [
             ShowDetailHeaderTableCell.self,
-            ShowDetailSummaryTableCell.self
+            ShowDetailSummaryTableCell.self,
+            ShowDetailEpisodeTableCell.self
         ])
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
@@ -26,16 +27,20 @@ final class ShowDetailViewController: UIViewController {
         return tableView
     }()
     private let dataSource = RxTableViewSectionedReloadDataSource<DetailSection>(
-      configureCell: { dataSource, tableView, indexPath, item in
-          switch item {
-          case .header(let show):
-              let cell = tableView.dequeueReusableCell(with: ShowDetailHeaderTableCell.self)
-              cell.bind(show: show)
-              return cell
-          case .summary(let show):
-              let cell = tableView.dequeueReusableCell(with: ShowDetailSummaryTableCell.self)
-              cell.bind(show: show)
-              return cell
+        configureCell: { dataSource, tableView, indexPath, item in
+            switch item {
+            case .header(let show):
+                let cell = tableView.dequeueReusableCell(with: ShowDetailHeaderTableCell.self)
+                cell.bind(show: show)
+                return cell
+            case .summary(let show):
+                let cell = tableView.dequeueReusableCell(with: ShowDetailSummaryTableCell.self)
+                cell.bind(show: show)
+                return cell
+            case .episode(let episode):
+                let cell = tableView.dequeueReusableCell(with: ShowDetailEpisodeTableCell.self)
+                cell.bind(episode: episode)
+                return cell
           }
       }
     )
@@ -60,6 +65,7 @@ final class ShowDetailViewController: UIViewController {
         super.viewDidLoad()
         title = viewModel.show.name
         bindTableView()
+        viewModel.loadSeasons()
     }
 }
 
@@ -75,7 +81,8 @@ private extension ShowDetailViewController {
         dataSource.titleForHeaderInSection = { dataSource, index in
             return dataSource.sectionModels[index].header
         }
-        Observable.just(viewModel.items)
+        viewModel.items
+            .asObservable()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
     }

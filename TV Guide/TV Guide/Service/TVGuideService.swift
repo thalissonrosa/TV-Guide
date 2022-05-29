@@ -12,13 +12,16 @@ final class TVGuideService {
     // MARK: Properties
     private let showListLoader: APILoader<ShowListAPI>
     private let searchLoader: APILoader<SearchListAPI>
+    private let seasonsLoader: APILoader<SeasonListAPI>
 
     init(
         showListLoader: APILoader<ShowListAPI> = APILoader(apiRequest: ShowListAPI()),
-        searchLoard: APILoader<SearchListAPI> = APILoader(apiRequest: SearchListAPI())
+        searchLoard: APILoader<SearchListAPI> = APILoader(apiRequest: SearchListAPI()),
+        seasonsLoader: APILoader<SeasonListAPI> = APILoader(apiRequest: SeasonListAPI())
     ) {
         self.showListLoader = showListLoader
         self.searchLoader = searchLoard
+        self.seasonsLoader = seasonsLoader
     }
 
     func getShows(page: Int) -> Single<[Show]> {
@@ -38,6 +41,20 @@ final class TVGuideService {
     func search(query: String) -> Single<[Show]> {
         Single.create { [weak self] single in
             self?.searchLoader.request(router: TVMazeRouter.search(query: query)) { result in
+                switch result {
+                case .success(let shows):
+                    single(.success(shows))
+                case .failure(let error):
+                    single(.failure(error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    func getSeasons(show: Show) -> Single<Seasons> {
+        Single.create { [weak self] single in
+            self?.seasonsLoader.request(router: TVMazeRouter.getSeasons(show: show)) { result in
                 switch result {
                 case .success(let shows):
                     single(.success(shows))

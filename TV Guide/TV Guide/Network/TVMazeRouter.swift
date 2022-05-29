@@ -10,6 +10,7 @@ import Foundation
 enum TVMazeRouter: Router {
     case getShows(page: Int)
     case search(query: String)
+    case getSeasons(show: Show)
 
     var scheme: String {
         "https"
@@ -25,6 +26,8 @@ enum TVMazeRouter: Router {
             return "/shows"
         case .search:
             return "/search/shows"
+        case .getSeasons(let show):
+            return "/shows/\(show.id)/episodes"
         }
     }
 
@@ -42,6 +45,8 @@ enum TVMazeRouter: Router {
             return [URLQueryItem(name: "page", value: String(page))]
         case .search(let query):
             return [URLQueryItem(name: "q", value: query)]
+        case .getSeasons:
+            return []
         }
     }
 }

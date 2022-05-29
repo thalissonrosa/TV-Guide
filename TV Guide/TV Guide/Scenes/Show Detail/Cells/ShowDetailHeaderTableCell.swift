@@ -72,7 +72,7 @@ final class ShowDetailHeaderTableCell: UITableViewCell {
         daysLabel.text = R.string.localizable.show_detail_days(
             show.schedule.days?.joined(separator: separator) ?? notApplicable
         )
-        guard let url = show.image?.mediumURL else { return }
+        guard let url = show.image?.originalURL else { return }
         posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constant.imageFadeIn))])
     }
 }

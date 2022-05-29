@@ -21,3 +21,11 @@ struct SearchListAPI: APIHandler {
         return result.map { $0.show }
     }
 }
+
+struct SeasonListAPI: APIHandler {
+    func parseResponse(data: Data) throws -> Seasons {
+        let decoder = JSONDecoder()
+        let episodes = try decoder.decode([Episode].self, from: data)
+        return Seasons(episodes: episodes)
+    }
+}

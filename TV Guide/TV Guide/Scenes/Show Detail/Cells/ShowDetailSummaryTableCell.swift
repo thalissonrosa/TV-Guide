@@ -73,6 +73,7 @@ private extension ShowDetailSummaryTableCell {
     }
 }
 
+// MARK: Util
 private extension String {
     var removeTags: String? {
         guard let data = data(using: .utf8) else { return nil }
