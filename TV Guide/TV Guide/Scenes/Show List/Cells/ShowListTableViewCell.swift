@@ -13,7 +13,7 @@ final class ShowListTableViewCell: UITableViewCell {
     private let containerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = Dimension.stackViewSpacing
+        stackView.spacing = Constants.defaultHorizontalSpace
         stackView.alignment = .center
         return stackView
     }()
@@ -50,7 +50,7 @@ final class ShowListTableViewCell: UITableViewCell {
     func bind(show: Show) {
         showNameLabel.text = show.name
         guard let url = show.image?.mediumURL else { return }
-        posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constant.imageFadeIn))])
+        posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constants.imageFadeIn))])
     }
 }
 
@@ -86,11 +86,6 @@ private extension ShowListTableViewCell {
             bottom: 4.0,
             right: 16.0
         )
-        static let stackViewSpacing: CGFloat = 10.0
         static let posterImageRatio: CGFloat = 210/295
-    }
-
-    struct Constant {
-        static let imageFadeIn: TimeInterval = 0.3
     }
 }

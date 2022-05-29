@@ -63,7 +63,7 @@ final class ShowDetailEpisodeTableCell: UITableViewCell {
             episode.name
         )
         guard let url = episode.image?.mediumURL else { return }
-        posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constant.imageFadeIn))])
+        posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constants.imageFadeIn))])
     }
 }
 
@@ -84,7 +84,7 @@ private extension ShowDetailEpisodeTableCell {
         NSLayoutConstraint.activate([
             backgroundColorView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: Dimension.horizontalSpace
+                constant: Constants.defaultHorizontalSpace
             ),
             backgroundColorView.topAnchor.constraint(
                 equalTo: contentView.topAnchor,
@@ -92,11 +92,11 @@ private extension ShowDetailEpisodeTableCell {
             ),
             backgroundColorView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: -Dimension.horizontalSpace
+                constant: -Constants.defaultHorizontalSpace
             ),
             backgroundColorView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
-                constant: -Dimension.horizontalSpace
+                constant: -Constants.defaultHorizontalSpace
             ),
 
             posterImageView.leadingAnchor.constraint(equalTo: backgroundColorView.leadingAnchor),
@@ -108,12 +108,12 @@ private extension ShowDetailEpisodeTableCell {
             posterImageView.widthAnchor.constraint(equalToConstant: Dimension.posterImageSize.width),
             posterImageView.bottomAnchor.constraint(
                 equalTo: contentView.bottomAnchor,
-                constant: -Dimension.horizontalSpace
+                constant: -Constants.defaultHorizontalSpace
             ),
 
             episodeLabel.leadingAnchor.constraint(
                 equalTo: posterImageView.trailingAnchor,
-                constant: Dimension.horizontalSpace
+                constant: Constants.defaultHorizontalSpace
             ),
             episodeLabel.topAnchor.constraint(
                 equalTo: posterImageView.topAnchor,
@@ -132,12 +132,10 @@ private extension ShowDetailEpisodeTableCell {
 private extension ShowDetailEpisodeTableCell {
     struct Dimension {
         static let posterImageSize = CGSize(width: 125.0, height: 70.0)
-        static let horizontalSpace: CGFloat = 10.0
         static let verticalSpace: CGFloat = 4.0
     }
 
     struct Constant {
-        static let imageFadeIn: TimeInterval = 0.3
         static let highlightedColor: UIColor = .systemGray5
         static let defaultColor: UIColor = .systemGray6
     }

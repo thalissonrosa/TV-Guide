@@ -1,5 +1,5 @@
 //
-//  ShowDetailSummaryTableCell.swift
+//  SummaryTableCell.swift
 //  TV Guide
 //
 //  Created by Thalisson da Rosa on 28/05/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShowDetailSummaryTableCell: UITableViewCell {
+final class SummaryTableCell: UITableViewCell {
     // MARK: Properties
     private let verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -42,13 +42,13 @@ final class ShowDetailSummaryTableCell: UITableViewCell {
     }
 
     // MARK: Public methods
-    func bind(show: Show) {
-        summaryDescriptionLabel.text = show.summary.removeTags
+    func bind(summary: String?) {
+        summaryDescriptionLabel.text = summary?.removeTags
     }
 }
 
 // MARK: Private methods
-private extension ShowDetailSummaryTableCell {
+private extension SummaryTableCell {
     func setupUI() {
         selectionStyle = .none
         contentView.apply {
@@ -62,7 +62,7 @@ private extension ShowDetailSummaryTableCell {
 }
 
 // MARK: Constants
-private extension ShowDetailSummaryTableCell {
+private extension SummaryTableCell {
     struct Dimension {
         static let stackViewSpacing: CGFloat = 6.0
         static let stackViewInsets = UIEdgeInsets(

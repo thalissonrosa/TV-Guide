@@ -74,7 +74,7 @@ final class ShowDetailHeaderTableCell: UITableViewCell {
             show.schedule.days?.joined(separator: separator) ?? notApplicable
         )
         guard let url = show.image?.originalURL else { return }
-        posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constant.imageFadeIn))])
+        posterImageView.kf.setImage(with: url, options: [.transition(.fade(Constants.imageFadeIn))])
     }
 }
 
@@ -99,7 +99,7 @@ private extension ShowDetailHeaderTableCell {
         NSLayoutConstraint.activate([
             posterImageView.leadingAnchor.constraint(
                 equalTo: contentView.leadingAnchor,
-                constant: Dimension.horizontalSpacing
+                constant: Constants.defaultHorizontalSpace
             ),
             posterImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             posterImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -116,7 +116,7 @@ private extension ShowDetailHeaderTableCell {
 
             verticalStackView.leadingAnchor.constraint(
                 equalTo: posterImageView.trailingAnchor,
-                constant: Dimension.horizontalSpacing
+                constant: Constants.defaultHorizontalSpace
             ),
             verticalStackView.topAnchor.constraint(
                 equalTo: posterImageView.topAnchor,
@@ -124,7 +124,7 @@ private extension ShowDetailHeaderTableCell {
             ),
             verticalStackView.trailingAnchor.constraint(
                 equalTo: contentView.trailingAnchor,
-                constant: -Dimension.horizontalSpacing
+                constant: -Constants.defaultHorizontalSpace
             )
         ])
     }
@@ -134,13 +134,8 @@ private extension ShowDetailHeaderTableCell {
 private extension ShowDetailHeaderTableCell {
     struct Dimension {
         static let stackViewTopMargin: CGFloat = 12.0
-        static let horizontalSpacing: CGFloat = 10.0
         static let posterHeightImageRatio: CGFloat = 1000/680
         static let posterWidthMultiplier: CGFloat = 1/3
         static let descriptionVerticalSpacing: CGFloat = 10.0
-    }
-
-    struct Constant {
-        static let imageFadeIn: TimeInterval = 0.3
     }
 }

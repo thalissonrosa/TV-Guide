@@ -17,7 +17,7 @@ final class ShowDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.register(cellTypes: [
             ShowDetailHeaderTableCell.self,
-            ShowDetailSummaryTableCell.self,
+            SummaryTableCell.self,
             ShowDetailEpisodeTableCell.self,
             ShowDetailEpisodesHeaderCell.self,
         ])
@@ -34,8 +34,8 @@ final class ShowDetailViewController: UIViewController {
                 cell.bind(show: show)
                 return cell
             case .summary(let show):
-                let cell = tableView.dequeueReusableCell(with: ShowDetailSummaryTableCell.self)
-                cell.bind(show: show)
+                let cell = tableView.dequeueReusableCell(with: SummaryTableCell.self)
+                cell.bind(summary: show.summary)
                 return cell
             case .episode(let episode):
                 let cell = tableView.dequeueReusableCell(with: ShowDetailEpisodeTableCell.self)
@@ -88,10 +88,14 @@ private extension ShowDetailViewController {
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        tableView.rx.modelSelected(ShowDetailItem.self).subscribe(onNext: { item in
+        tableView.rx.modelSelected(ShowDetailItem.self).subscribe(onNext: { [weak self] item in
             switch item {
             case .episode(let episode):
-                print(episode.name)
+                let viewModel = EpisodeDetailViewModelImpl(episode: episode)
+                self?.navigationController?.pushViewController(
+                    EpisodeDetailViewController(viewModel: viewModel),
+                    animated: true
+                )
             default:
                 return
             }
