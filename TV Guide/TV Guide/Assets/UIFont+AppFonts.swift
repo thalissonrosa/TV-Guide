@@ -8,15 +8,15 @@
 import UIKit
 
 extension UIFont {
-    static func boldTitle() -> UIFont {
+    static var boldTitle: UIFont {
         .systemFont(ofSize: 24.0, weight: .bold)
     }
 
-    static func smallRegular() -> UIFont {
+    static var smallRegular: UIFont {
         .systemFont(ofSize: 14.0, weight: .regular)
     }
 
-    static func mediumRegular() -> UIFont {
+    static var mediumRegular: UIFont {
         .systemFont(ofSize: 16.0, weight: .regular)
     }
 }

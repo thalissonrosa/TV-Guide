@@ -23,7 +23,6 @@ final class ShowDetailViewController: UIViewController {
         ])
         tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.allowsSelection = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -44,8 +43,8 @@ final class ShowDetailViewController: UIViewController {
                 return cell
             case .episodeHeader:
                 return tableView.dequeueReusableCell(with: ShowDetailEpisodesHeaderCell.self)
-          }
-      }
+            }
+        }
     )
     private let viewModel: ShowDetailViewModel
     private let disposeBag = DisposeBag()
@@ -88,5 +87,18 @@ private extension ShowDetailViewController {
             .asObservable()
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+
+        tableView.rx.modelSelected(ShowDetailItem.self).subscribe(onNext: { item in
+            switch item {
+            case .episode(let episode):
+                print(episode.name)
+            default:
+                return
+            }
+        }).disposed(by: disposeBag)
+
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            self?.tableView.deselectRow(at: indexPath, animated: true)
+        }).disposed(by: disposeBag)
     }
 }

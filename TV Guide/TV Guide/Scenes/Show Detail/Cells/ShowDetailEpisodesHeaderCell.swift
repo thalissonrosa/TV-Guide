@@ -11,7 +11,7 @@ final class ShowDetailEpisodesHeaderCell: UITableViewCell {
     // MARK: Properties
     private let episodesLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldTitle()
+        label.font = .boldTitle
         label.numberOfLines = 1
         label.text = R.string.localizable.show_detail_episodes()
         return label

@@ -19,14 +19,14 @@ final class ShowDetailEpisodeTableCell: UITableViewCell {
     }()
     private let episodeLabel: UILabel = {
         let label = UILabel()
-        label.font = .smallRegular()
+        label.font = .smallRegular
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     private let backgroundColorView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemGray6
+        view.backgroundColor = Constant.defaultColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -46,6 +46,16 @@ final class ShowDetailEpisodeTableCell: UITableViewCell {
         posterImageView.kf.cancelDownloadTask()
     }
 
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        updateBackgroundColor(highlighted: highlighted)
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        updateBackgroundColor(highlighted: selected)
+    }
+
     // MARK: Public methods
     func bind(episode: Episode) {
         episodeLabel.text = R.string.localizable.show_detail_episode_format(
@@ -60,6 +70,7 @@ final class ShowDetailEpisodeTableCell: UITableViewCell {
 // MARK: Private methods
 private extension ShowDetailEpisodeTableCell {
     func setupUI() {
+        selectionStyle = .none
         contentView.apply {
             $0.addSubview(backgroundColorView.apply {
                 $0.addSubview(posterImageView)
@@ -111,6 +122,10 @@ private extension ShowDetailEpisodeTableCell {
             episodeLabel.trailingAnchor.constraint(equalTo: backgroundColorView.trailingAnchor)
         ])
     }
+
+    func updateBackgroundColor(highlighted: Bool) {
+        backgroundColorView.backgroundColor = highlighted ? Constant.highlightedColor : Constant.defaultColor
+    }
 }
 
 // MARK: Constants
@@ -123,5 +138,7 @@ private extension ShowDetailEpisodeTableCell {
 
     struct Constant {
         static let imageFadeIn: TimeInterval = 0.3
+        static let highlightedColor: UIColor = .systemGray5
+        static let defaultColor: UIColor = .systemGray6
     }
 }

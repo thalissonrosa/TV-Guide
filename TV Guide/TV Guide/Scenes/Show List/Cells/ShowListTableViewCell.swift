@@ -26,7 +26,7 @@ final class ShowListTableViewCell: UITableViewCell {
     }()
     private let showNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .mediumRegular()
+        label.font = .mediumRegular
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -57,7 +57,6 @@ final class ShowListTableViewCell: UITableViewCell {
 // MARK: Private methods
 private extension ShowListTableViewCell {
     func setupUI() {
-        selectionStyle = .none
         contentView.apply {
             $0.addSubview(containerStackView.apply {
                 $0.addArrangedSubview(posterImageView)

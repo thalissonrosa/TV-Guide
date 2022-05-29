@@ -25,25 +25,25 @@ final class ShowDetailHeaderTableCell: UITableViewCell {
     }()
     private let showNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldTitle()
+        label.font = .boldTitle
         label.numberOfLines = 2
         return label
     }()
     private let genresLabel: UILabel = {
         let label = UILabel()
-        label.font = .smallRegular()
+        label.font = .smallRegular
         label.numberOfLines = 0
         return label
     }()
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.font = .mediumRegular()
+        label.font = .mediumRegular
         label.numberOfLines = 1
         return label
     }()
     private let daysLabel: UILabel = {
         let label = UILabel()
-        label.font = .mediumRegular()
+        label.font = .mediumRegular
         label.numberOfLines = 0
         return label
     }()
@@ -81,6 +81,7 @@ final class ShowDetailHeaderTableCell: UITableViewCell {
 // MARK: Private methods
 private extension ShowDetailHeaderTableCell {
     func setupUI() {
+        selectionStyle = .none
         contentView.apply {
             $0.addSubview(posterImageView)
             $0.addSubview(verticalStackView.apply {

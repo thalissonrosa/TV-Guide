@@ -18,14 +18,14 @@ final class ShowDetailSummaryTableCell: UITableViewCell {
     }()
     private let summaryTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = .boldTitle()
+        label.font = .boldTitle
         label.numberOfLines = 1
         label.text = R.string.localizable.show_detail_summary()
         return label
     }()
     private let summaryDescriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = .mediumRegular()
+        label.font = .mediumRegular
         label.textAlignment = .justified
         label.numberOfLines = 0
         return label
@@ -50,6 +50,7 @@ final class ShowDetailSummaryTableCell: UITableViewCell {
 // MARK: Private methods
 private extension ShowDetailSummaryTableCell {
     func setupUI() {
+        selectionStyle = .none
         contentView.apply {
             $0.addSubview(verticalStackView.apply {
                 $0.addArrangedSubview(summaryTitleLabel)
