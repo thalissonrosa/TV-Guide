@@ -13,5 +13,6 @@
 "show_detail_season_header" = "Season %i";
 "show_detail_summary" = "Summary";
 "show_detail_episodes" = "Episodes";
+"episode_detail_season_episode" = "Season %i - Episode %i";
 "common_separator" = ", ";
 "common_not_aplicable" = "N/A";

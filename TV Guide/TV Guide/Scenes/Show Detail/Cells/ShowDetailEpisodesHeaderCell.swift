@@ -44,9 +44,9 @@ private extension ShowDetailEpisodesHeaderCell {
     struct Dimension {
         static let labelConstraintInsets = UIEdgeInsets(
             top: 5.0,
-            left: 10.0,
+            left: Constants.defaultHorizontalSpace,
             bottom: 0.0,
-            right: 10.0
+            right: Constants.defaultHorizontalSpace
         )
     }
 }

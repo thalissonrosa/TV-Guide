@@ -17,6 +17,7 @@ final class EpisodeDetailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.register(cellTypes: [
             PictureTableCell.self,
+            EpisodeDetailsTableCell.self,
             SummaryTableCell.self
         ])
         tableView.separatorStyle = .none
@@ -35,8 +36,10 @@ final class EpisodeDetailViewController: UIViewController {
                 let cell = tableView.dequeueReusableCell(with: PictureTableCell.self)
                 cell.bind(imageURL: url)
                 return cell
-            default:
-                return UITableViewCell()
+            case .header(let episode):
+                let cell = tableView.dequeueReusableCell(with: EpisodeDetailsTableCell.self)
+                cell.bind(episode: episode)
+                return cell
             }
         }
     )

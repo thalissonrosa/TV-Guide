@@ -1,13 +1,13 @@
 //
-//  SummaryTableCell.swift
+//  EpisodeDetailsTableCell.swift
 //  TV Guide
 //
-//  Created by Thalisson da Rosa on 28/05/22.
+//  Created by Thalisson da Rosa on 29/05/22.
 //
 
 import UIKit
 
-final class SummaryTableCell: UITableViewCell {
+final class EpisodeDetailsTableCell: UITableViewCell {
     // MARK: Properties
     private let verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -16,17 +16,15 @@ final class SummaryTableCell: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    private let summaryTitleLabel: UILabel = {
+    private let episodeNameLabel: UILabel = {
         let label = UILabel()
         label.font = .boldTitle
-        label.numberOfLines = 1
-        label.text = R.string.localizable.show_detail_summary()
+        label.numberOfLines = 0
         return label
     }()
-    private let summaryDescriptionLabel: UILabel = {
+    private let episodeSeasonNumberLabel: UILabel = {
         let label = UILabel()
         label.font = .mediumRegular
-        label.textAlignment = .justified
         label.numberOfLines = 0
         return label
     }()
@@ -42,19 +40,23 @@ final class SummaryTableCell: UITableViewCell {
     }
 
     // MARK: Public methods
-    func bind(summary: String?) {
-        summaryDescriptionLabel.text = summary?.removeTags
+    func bind(episode: Episode) {
+        episodeNameLabel.text = episode.name
+        episodeSeasonNumberLabel.text = R.string.localizable.episode_detail_season_episode(
+            episode.season,
+            episode.number
+        )
     }
 }
 
 // MARK: Private methods
-private extension SummaryTableCell {
+private extension EpisodeDetailsTableCell {
     func setupUI() {
         selectionStyle = .none
         contentView.apply {
             $0.addSubview(verticalStackView.apply {
-                $0.addArrangedSubview(summaryTitleLabel)
-                $0.addArrangedSubview(summaryDescriptionLabel)
+                $0.addArrangedSubview(episodeNameLabel)
+                $0.addArrangedSubview(episodeSeasonNumberLabel)
             })
         }
         verticalStackView.addConstraintsToFillSuperview(insets: Dimension.stackViewInsets)
@@ -62,33 +64,14 @@ private extension SummaryTableCell {
 }
 
 // MARK: Constants
-private extension SummaryTableCell {
+private extension EpisodeDetailsTableCell {
     struct Dimension {
         static let stackViewSpacing: CGFloat = 6.0
         static let stackViewInsets = UIEdgeInsets(
             top: 5.0,
             left: Constants.defaultHorizontalSpace,
-            bottom: 0.0,
+            bottom: 10.0,
             right: Constants.defaultHorizontalSpace
         )
-    }
-}
-
-// MARK: Util
-private extension String {
-    var removeTags: String? {
-        guard let data = data(using: .utf8) else { return nil }
-        do {
-            return try NSAttributedString(
-                data: data,
-                options: [
-                    .documentType: NSAttributedString.DocumentType.html,
-                    .characterEncoding:String.Encoding.utf8.rawValue
-                ],
-                documentAttributes: nil
-            ).string
-        } catch {
-            return nil
-        }
     }
 }

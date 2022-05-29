@@ -50,7 +50,7 @@ final class EpisodeDetailViewModelImpl: EpisodeDetailViewModel {
     ) {
         self.episode = episode
         var items: [EpisodeDetailItem] = [
-//            .header(episode: episode),
+            .header(episode: episode),
             .summary(episode: episode)
         ]
         if let url = episode.image?.originalURL {
