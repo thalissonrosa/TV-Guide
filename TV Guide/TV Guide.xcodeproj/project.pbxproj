@@ -48,6 +48,7 @@
 		2B0C79162843509000FE9433 /* PictureTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C79152843509000FE9433 /* PictureTableCell.swift */; };
 		2B0C79192843510A00FE9433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C79182843510A00FE9433 /* Constants.swift */; };
 		2B0C791B284435CD00FE9433 /* EpisodeDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C791A284435CD00FE9433 /* EpisodeDetailsTableCell.swift */; };
+		2B0C791E28443C8900FE9433 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C791D28443C8900FE9433 /* UIColor+AppColors.swift */; };
 		481908B09E68A5B0C1FA56D6 /* Pods_TV_Guide_TV_GuideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */; };
 		ECF5BB01225737340D7A12BA /* Pods_TV_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB01B696987F7E60D08FFE /* Pods_TV_Guide.framework */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		2B0C79152843509000FE9433 /* PictureTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureTableCell.swift; sourceTree = "<group>"; };
 		2B0C79182843510A00FE9433 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B0C791A284435CD00FE9433 /* EpisodeDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsTableCell.swift; sourceTree = "<group>"; };
+		2B0C791D28443C8900FE9433 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
 		2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_Guide_TV_GuideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C622444FE84DB5C0969082 /* Pods_TV_GuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_GuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868CA0CA73DE126C430815AF /* Pods-TV GuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV GuideTests.release.xcconfig"; path = "Target Support Files/Pods-TV GuideTests/Pods-TV GuideTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				2B0C789228417C9E00FE9433 /* Assets.xcassets */,
 				2B0C78C82841964300FE9433 /* Localizable.strings */,
 				2B0C790D284344E200FE9433 /* UIFont+AppFonts.swift */,
+				2B0C791D28443C8900FE9433 /* UIColor+AppColors.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				2B0C78C7284194AA00FE9433 /* UITableView+Cell.swift in Sources */,
 				2B0C78F12841DECD00FE9433 /* SearchResult.swift in Sources */,
 				2B0C78E82841AC8B00FE9433 /* TVMazeAPI.swift in Sources */,
+				2B0C791E28443C8900FE9433 /* UIColor+AppColors.swift in Sources */,
 				2B0C790E284344E200FE9433 /* UIFont+AppFonts.swift in Sources */,
 				2B0C791128434B7B00FE9433 /* EpisodeDetailViewController.swift in Sources */,
 				2B0C788E28417C9B00FE9433 /* ShowsListViewController.swift in Sources */,

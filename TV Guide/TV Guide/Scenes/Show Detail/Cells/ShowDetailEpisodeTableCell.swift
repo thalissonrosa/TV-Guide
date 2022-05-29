@@ -26,7 +26,7 @@ final class ShowDetailEpisodeTableCell: UITableViewCell {
     }()
     private let backgroundColorView: UIView = {
         let view = UIView()
-        view.backgroundColor = Constant.defaultColor
+        view.backgroundColor = .backgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -124,7 +124,7 @@ private extension ShowDetailEpisodeTableCell {
     }
 
     func updateBackgroundColor(highlighted: Bool) {
-        backgroundColorView.backgroundColor = highlighted ? Constant.highlightedColor : Constant.defaultColor
+        backgroundColorView.backgroundColor = highlighted ? .highlightedColor : .backgroundColor
     }
 }
 
@@ -133,10 +133,5 @@ private extension ShowDetailEpisodeTableCell {
     struct Dimension {
         static let posterImageSize = CGSize(width: 125.0, height: 70.0)
         static let verticalSpace: CGFloat = 4.0
-    }
-
-    struct Constant {
-        static let highlightedColor: UIColor = .systemGray5
-        static let defaultColor: UIColor = .systemGray6
     }
 }

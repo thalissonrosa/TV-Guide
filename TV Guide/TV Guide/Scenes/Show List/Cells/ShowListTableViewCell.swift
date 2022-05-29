@@ -57,6 +57,9 @@ final class ShowListTableViewCell: UITableViewCell {
 // MARK: Private methods
 private extension ShowListTableViewCell {
     func setupUI() {
+        selectedBackgroundView = UIView().apply {
+            $0.backgroundColor = .highlightedColor
+        }
         contentView.apply {
             $0.addSubview(containerStackView.apply {
                 $0.addArrangedSubview(posterImageView)
