@@ -20,7 +20,7 @@ final class ShowDetailSummaryTableCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24.0, weight: .bold)
         label.numberOfLines = 1
-        label.text = "Summary"
+        label.text = R.string.localizable.show_detail_summary()
         return label
     }()
     private let summaryDescriptionLabel: UILabel = {
@@ -65,7 +65,7 @@ private extension ShowDetailSummaryTableCell {
     struct Dimension {
         static let stackViewSpacing: CGFloat = 6.0
         static let stackViewInsets = UIEdgeInsets(
-            top: 0.0,
+            top: 5.0,
             left: 10.0,
             bottom: 0.0,
             right: 10.0

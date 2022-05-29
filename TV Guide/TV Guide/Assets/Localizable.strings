@@ -11,5 +11,6 @@
 "show_detail_days" = "Days: %@";
 "show_detail_episode_format" = "E%i - %@";
 "show_detail_season_header" = "Season %i";
+"show_detail_summary" = "Summary";
 "common_separator" = ", ";
 "common_not_aplicable" = "N/A";
