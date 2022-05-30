@@ -13,7 +13,7 @@
 		2B0C788E28417C9B00FE9433 /* ShowsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C788D28417C9B00FE9433 /* ShowsListViewController.swift */; };
 		2B0C789328417C9E00FE9433 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C789228417C9E00FE9433 /* Assets.xcassets */; };
 		2B0C789628417C9E00FE9433 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C789428417C9E00FE9433 /* LaunchScreen.storyboard */; };
-		2B0C78A128417C9F00FE9433 /* TV_GuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78A028417C9F00FE9433 /* TV_GuideTests.swift */; };
+		2B0C78A128417C9F00FE9433 /* ShowListAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78A028417C9F00FE9433 /* ShowListAPITests.swift */; };
 		2B0C78BF28417FE800FE9433 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78BE28417FE800FE9433 /* R.generated.swift */; };
 		2B0C78C22841834800FE9433 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78C12841834800FE9433 /* UIView+Constraints.swift */; };
 		2B0C78C5284185D200FE9433 /* ShowListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C78C4284185D200FE9433 /* ShowListTableViewCell.swift */; };
@@ -49,19 +49,16 @@
 		2B0C79192843510A00FE9433 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C79182843510A00FE9433 /* Constants.swift */; };
 		2B0C791B284435CD00FE9433 /* EpisodeDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C791A284435CD00FE9433 /* EpisodeDetailsTableCell.swift */; };
 		2B0C791E28443C8900FE9433 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C791D28443C8900FE9433 /* UIColor+AppColors.swift */; };
-		481908B09E68A5B0C1FA56D6 /* Pods_TV_Guide_TV_GuideUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */; };
+		2B0C792128443F5B00FE9433 /* MockNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C792028443F5B00FE9433 /* MockNetworkSession.swift */; };
+		2B0C792428443F8000FE9433 /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C792328443F8000FE9433 /* JSONUtils.swift */; };
+		2B0C79262844411400FE9433 /* show_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C79252844411400FE9433 /* show_list.json */; };
+		2B0C7929284441F100FE9433 /* TVGuideServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0C7928284441F100FE9433 /* TVGuideServiceTests.swift */; };
+		2B0C792B284444E800FE9433 /* seasons.json in Resources */ = {isa = PBXBuildFile; fileRef = 2B0C792A284444E800FE9433 /* seasons.json */; };
 		ECF5BB01225737340D7A12BA /* Pods_TV_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BAB01B696987F7E60D08FFE /* Pods_TV_Guide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		2B0C789D28417C9F00FE9433 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2B0C787E28417C9B00FE9433 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2B0C788528417C9B00FE9433;
-			remoteInfo = "TV Guide";
-		};
-		2B0C78A728417C9F00FE9433 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2B0C787E28417C9B00FE9433 /* Project object */;
 			proxyType = 1;
@@ -79,8 +76,7 @@
 		2B0C789528417C9E00FE9433 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B0C789728417C9E00FE9433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B0C789C28417C9F00FE9433 /* TV GuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TV GuideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B0C78A028417C9F00FE9433 /* TV_GuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TV_GuideTests.swift; sourceTree = "<group>"; };
-		2B0C78A628417C9F00FE9433 /* TV GuideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TV GuideUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B0C78A028417C9F00FE9433 /* ShowListAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListAPITests.swift; sourceTree = "<group>"; };
 		2B0C78BE28417FE800FE9433 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		2B0C78C12841834800FE9433 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		2B0C78C4284185D200FE9433 /* ShowListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +112,11 @@
 		2B0C79182843510A00FE9433 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2B0C791A284435CD00FE9433 /* EpisodeDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsTableCell.swift; sourceTree = "<group>"; };
 		2B0C791D28443C8900FE9433 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		2B0C792028443F5B00FE9433 /* MockNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkSession.swift; sourceTree = "<group>"; };
+		2B0C792328443F8000FE9433 /* JSONUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
+		2B0C79252844411400FE9433 /* show_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = show_list.json; sourceTree = "<group>"; };
+		2B0C7928284441F100FE9433 /* TVGuideServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGuideServiceTests.swift; sourceTree = "<group>"; };
+		2B0C792A284444E800FE9433 /* seasons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seasons.json; sourceTree = "<group>"; };
 		2C0A6DCD9ACD05057F6DDB00 /* Pods_TV_Guide_TV_GuideUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_Guide_TV_GuideUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C622444FE84DB5C0969082 /* Pods_TV_GuideTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TV_GuideTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868CA0CA73DE126C430815AF /* Pods-TV GuideTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TV GuideTests.release.xcconfig"; path = "Target Support Files/Pods-TV GuideTests/Pods-TV GuideTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,14 +145,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2B0C78A328417C9F00FE9433 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				481908B09E68A5B0C1FA56D6 /* Pods_TV_Guide_TV_GuideUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -171,7 +164,6 @@
 			children = (
 				2B0C788628417C9B00FE9433 /* TV Guide.app */,
 				2B0C789C28417C9F00FE9433 /* TV GuideTests.xctest */,
-				2B0C78A628417C9F00FE9433 /* TV GuideUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +189,11 @@
 		2B0C789F28417C9F00FE9433 /* TV GuideTests */ = {
 			isa = PBXGroup;
 			children = (
-				2B0C78A028417C9F00FE9433 /* TV_GuideTests.swift */,
+				2B0C79272844411600FE9433 /* JSON */,
+				2B0C791F28443F3900FE9433 /* Mock Classes */,
+				2B0C792228443F7100FE9433 /* Utils */,
+				2B0C78A028417C9F00FE9433 /* ShowListAPITests.swift */,
+				2B0C7928284441F100FE9433 /* TVGuideServiceTests.swift */,
 			);
 			path = "TV GuideTests";
 			sourceTree = "<group>";
@@ -392,6 +388,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		2B0C791F28443F3900FE9433 /* Mock Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C792028443F5B00FE9433 /* MockNetworkSession.swift */,
+			);
+			path = "Mock Classes";
+			sourceTree = "<group>";
+		};
+		2B0C792228443F7100FE9433 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C792328443F8000FE9433 /* JSONUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2B0C79272844411600FE9433 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2B0C792A284444E800FE9433 /* seasons.json */,
+				2B0C79252844411400FE9433 /* show_list.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		75D5BA6642CF7AFB6AF378AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,26 +478,6 @@
 			productReference = 2B0C789C28417C9F00FE9433 /* TV GuideTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2B0C78A528417C9F00FE9433 /* TV GuideUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2B0C78B628417C9F00FE9433 /* Build configuration list for PBXNativeTarget "TV GuideUITests" */;
-			buildPhases = (
-				0AA64E49DC85DC5E74A05977 /* [CP] Check Pods Manifest.lock */,
-				2B0C78A228417C9F00FE9433 /* Sources */,
-				2B0C78A328417C9F00FE9433 /* Frameworks */,
-				2B0C78A428417C9F00FE9433 /* Resources */,
-				0907642BA42134F38AD3A038 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2B0C78A828417C9F00FE9433 /* PBXTargetDependency */,
-			);
-			name = "TV GuideUITests";
-			productName = "TV GuideUITests";
-			productReference = 2B0C78A628417C9F00FE9433 /* TV GuideUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -491,10 +492,6 @@
 						CreatedOnToolsVersion = 13.4;
 					};
 					2B0C789B28417C9F00FE9433 = {
-						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 2B0C788528417C9B00FE9433;
-					};
-					2B0C78A528417C9F00FE9433 = {
 						CreatedOnToolsVersion = 13.4;
 						TestTargetID = 2B0C788528417C9B00FE9433;
 					};
@@ -515,7 +512,6 @@
 			targets = (
 				2B0C788528417C9B00FE9433 /* TV Guide */,
 				2B0C789B28417C9F00FE9433 /* TV GuideTests */,
-				2B0C78A528417C9F00FE9433 /* TV GuideUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -535,36 +531,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B0C78A428417C9F00FE9433 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2B0C792B284444E800FE9433 /* seasons.json in Resources */,
+				2B0C79262844411400FE9433 /* show_list.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0907642BA42134F38AD3A038 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TV Guide-TV GuideUITests/Pods-TV Guide-TV GuideUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TV Guide-TV GuideUITests/Pods-TV Guide-TV GuideUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TV Guide-TV GuideUITests/Pods-TV Guide-TV GuideUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		093560F9C48C96C22726B376 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,28 +554,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TV Guide/Pods-TV Guide-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0AA64E49DC85DC5E74A05977 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TV Guide-TV GuideUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2B0C78BD28417F7F00FE9433 /* ShellScript */ = {
@@ -718,14 +670,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B0C78A128417C9F00FE9433 /* TV_GuideTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B0C78A228417C9F00FE9433 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2B0C7929284441F100FE9433 /* TVGuideServiceTests.swift in Sources */,
+				2B0C78A128417C9F00FE9433 /* ShowListAPITests.swift in Sources */,
+				2B0C792428443F8000FE9433 /* JSONUtils.swift in Sources */,
+				2B0C792128443F5B00FE9433 /* MockNetworkSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,11 +684,6 @@
 			isa = PBXTargetDependency;
 			target = 2B0C788528417C9B00FE9433 /* TV Guide */;
 			targetProxy = 2B0C789D28417C9F00FE9433 /* PBXContainerItemProxy */;
-		};
-		2B0C78A828417C9F00FE9433 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2B0C788528417C9B00FE9433 /* TV Guide */;
-			targetProxy = 2B0C78A728417C9F00FE9433 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -966,42 +909,6 @@
 			};
 			name = Release;
 		};
-		2B0C78B728417C9F00FE9433 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E2C1FF2B297B90EFC1FF67E /* Pods-TV Guide-TV GuideUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "darosathalisson.TV-GuideUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "TV Guide";
-			};
-			name = Debug;
-		};
-		2B0C78B828417C9F00FE9433 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3AAB202E434DBA86AC0EB0C /* Pods-TV Guide-TV GuideUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "darosathalisson.TV-GuideUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "TV Guide";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1028,15 +935,6 @@
 			buildConfigurations = (
 				2B0C78B428417C9F00FE9433 /* Debug */,
 				2B0C78B528417C9F00FE9433 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2B0C78B628417C9F00FE9433 /* Build configuration list for PBXNativeTarget "TV GuideUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2B0C78B728417C9F00FE9433 /* Debug */,
-				2B0C78B828417C9F00FE9433 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
