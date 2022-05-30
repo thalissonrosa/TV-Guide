@@ -16,11 +16,11 @@ final class TVGuideService {
 
     init(
         showListLoader: APILoader<ShowListAPI> = APILoader(apiRequest: ShowListAPI()),
-        searchLoard: APILoader<SearchListAPI> = APILoader(apiRequest: SearchListAPI()),
+        searchLoader: APILoader<SearchListAPI> = APILoader(apiRequest: SearchListAPI()),
         seasonsLoader: APILoader<SeasonListAPI> = APILoader(apiRequest: SeasonListAPI())
     ) {
         self.showListLoader = showListLoader
-        self.searchLoader = searchLoard
+        self.searchLoader = searchLoader
         self.seasonsLoader = seasonsLoader
     }
 
