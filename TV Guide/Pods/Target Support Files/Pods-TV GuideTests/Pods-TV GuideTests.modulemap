@@ -1,0 +1,6 @@
+framework module Pods_TV_GuideTests {
+  umbrella header "Pods-TV GuideTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TV Guide
+
+  Created by Thalisson da Rosa on 27/05/22.
+  
+*/
+
+"show_list_title" = "TV Shows";
+"show_detail_time" = "Time: %@";
+"show_detail_days" = "Days: %@";
+"show_detail_episode_format" = "E%i - %@";
+"show_detail_season_header" = "Season %i";
+"show_detail_summary" = "Summary";
+"show_detail_episodes" = "Episodes";
+"episode_detail_season_episode" = "Season %i - Episode %i";
+"common_separator" = ", ";
+"common_not_aplicable" = "N/A";
